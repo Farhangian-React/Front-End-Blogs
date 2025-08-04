@@ -9,14 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.5"
+    "@hookform/resolvers": "^5.1.1",
+    "@material-tailwind/react": "^2.1.10",
+    "axios": "^1.9.0",
+    "motion": "^12.16.0",
+    "next": "^15.3.3",
+    "query-string": "^9.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.57.0",
+    "react-hot-toast": "^2.5.2",
+    "react-icons": "^5.5.0",
+    "react-loader-spinner": "^6.1.6",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.5"
+    "eslint-config-next": "^15.3.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
   }
 }
