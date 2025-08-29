@@ -11,7 +11,7 @@ export default function Breadcrumbs({ breadcrumbs }) {
             className={`${
               breadcrumb.active ? "text-secondary-700" : "text-secondary-500"
             }
-          flex gap-x-2
+          flex gap-x-2 
             `}
           >
             <Link href={breadcrumb.href}>{breadcrumb.label}</Link>

@@ -15,7 +15,7 @@ import toast from "react-hot-toast";
 export function CreatePost() {
   return (
     <Link
-      href="/profile/posts/create"
+      href="/profile/post/create"
       className="justify-self-end flex gap-x-4 py-3 items-center rounded-lg bg-primary-900 px-4 text-sm font-medium text-secondary-0 
       transition-colors hover:bg-primary-700"
     >
@@ -27,7 +27,7 @@ export function CreatePost() {
 
 export function UpdatePost({ id }) {
   return (
-    <Link href={`/profile/posts/${id}/edit`}>
+    <Link href={`/profile/post/${id}/edit`}>
       <ButtonIcon variant="outline">
         <GiPencil />
       </ButtonIcon>
@@ -36,8 +36,8 @@ export function UpdatePost({ id }) {
 }
 
 export function DeletePost({ id: postId, postTitle }) {
-  // const deletePostWithId = ;
-{/*  const [state, formAction] = useFormState(deletePost, {
+
+  const [state, formAction] = useFormState(deletePost, {
     error: "",
     message: "",
   });
@@ -51,14 +51,14 @@ export function DeletePost({ id: postId, postTitle }) {
     if (state?.error) {
       toast.error(state.error);
     }
-  }, [state]);*/}
+  }, [state]);
 
   return (
     <>
-      <ButtonIcon variant="outline" >
+      <ButtonIcon variant="outline" onClick={()=>setIsDeleteOpen(true)} >
         <IoTrashOutline className="text-error" />
       </ButtonIcon>
-     {/*} <Modal
+    <Modal
         title={`حذف ${postTitle}`}
         open={isDeleteOpen}
         onClose={() => setIsDeleteOpen(false)}
@@ -72,7 +72,7 @@ export function DeletePost({ id: postId, postTitle }) {
           }}
         />
       </Modal>
-      */}
+  
     </>
   );
 }

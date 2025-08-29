@@ -1,18 +1,18 @@
 "use server";
 
-import { deletePostApi } from "@/services/postService";
+import { deleteCommentApi } from "@/services/commentService";
 import setCookiesOnReq from "@/utils/setCookieOnReq";
 import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 
-export default async function deletePost(prevState, { postId }) {
+export default async function deleteComment(prevState, { commentId }) {
   const cookieStore = cookies();
 
   try {
     const options = setCookiesOnReq(cookieStore);
-    const { message } = await deletePostApi(postId, options);
+    const { message } = await deleteCommentApi(commentId, options);
 
-    revalidatePath("/profile/post");
+    revalidatePath("/profile/comments");
 
     return {
       message,
