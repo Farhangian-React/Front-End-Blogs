@@ -56,9 +56,9 @@ const CommentForm = ({ postId, parentId, onClose }) => {
                   <Loading />
                 </div>
               ) : (
-                <SubmitButton type="submit" className="w-full">
+                <button type="submit" className="btn-gray p-2 rounded-md text-primary-800 hover:text-secondary-700 dark:text-secondary-100 w-full">
                   {parentId ? "ثبت پاسخ" : "ثبت نظر"}
-                </SubmitButton>
+                </button>
               )}
             </div>
           </form>

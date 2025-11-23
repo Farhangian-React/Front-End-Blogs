@@ -6,7 +6,7 @@ function CreatePostPage() {
     <div>
       <Breadcrumbs
         breadcrumbs={[
-          { label: "پست ها", href: "/profile/posts" },
+          { label: "پست ها", href: "/profile/post" },
           {
             label: "ایجاد پست",
             href: `/profile/post/create`,

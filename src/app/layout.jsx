@@ -11,8 +11,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fa" dir="rtl" className="dark-mode">
-      <body className={`min-h-screen  ${vazirFont.variable} font-sans `}>
+    <html lang="fa" dir="rtl" className="light-mode">
+      <body className={`min-h-screen  ${vazirFont.variable} font-sans bg-gray-50`}>
         <Toaster />
         <ReactQueryProvider>
           <AuthProvier>{children}</AuthProvier>

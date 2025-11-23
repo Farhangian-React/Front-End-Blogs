@@ -14,6 +14,7 @@ import ButtonIcon from "@/components/ui/ButtonIcon";
 import useCreatePost from "./useCreatePost";
 import useEditPost from "./useEditPost";
 import { useRouter } from "next/navigation";
+import { imageUrlToFile } from "@/utils/fileFormatter";
 
 const schema = yup
   .object({
@@ -102,7 +103,6 @@ function CreatePostForm({ postToEdit = {} }) {
     for (const key in data) {
       formData.append(key, data[key]);
     }
-
     if (isEditSession) {
       editPost(
         { id: editId, data: formData },

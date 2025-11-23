@@ -16,12 +16,12 @@ return(
           <br /> ساخت وبلاگ دلخواهت را همین حالا شروع کن !
         </p>
         <div className="flex justify-center gap-x-8 w-full mt-10">
-          <Button variant="outline">
+          <button className="border1  p-2 rounded-md  text-primary-800 dark:text-secondary-100 " >
             <Link href="/blogs">مطالعه بلاگ ها</Link>
-          </Button>
-          <Button variant="primary">
+          </button>
+          <button className="btn-gray p-2 rounded-md text-primary-800 dark:text-secondary-100">
             <Link href="/profile">مدیریت بلاگ ها</Link>
-          </Button>
+          </button>
         </div>
       </div>
     </div>

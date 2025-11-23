@@ -7,16 +7,17 @@
     &,
     &.light-mode {
       --background-app-rgb: 249, 250, 251;
-      --color-primary-900: 74, 109, 255;
-      --color-primary-800: 92, 124, 255;
-      --color-primary-700: 110, 138, 255;
-      --color-primary-600: 128, 153, 255;
-      --color-primary-500: 146, 167, 255;
-      --color-primary-400: 164, 182, 255;
-      --color-primary-300: 183, 197, 255;
-      --color-primary-200: 201, 211, 255;
-      --color-primary-100: 219, 226, 255;
-      --color-primary-50: 228, 233, 255;
+      --color-primary-900: 65 , 95 , 18;
+      --color-primary-800: 71 , 104 , 20;
+      --color-primary-700: 77 , 113 , 22;
+      --color-primary-600: 89 , 131 , 26;
+      --color-primary-500:  95 , 139 , 28 ;
+      --color-primary-400:  107 , 155 , 32;
+      --color-primary-300: 119 , 171 , 36;
+      --color-primary-200: 131 , 187 , 40 ;
+      --color-primary-100: 149 , 210 , 47;
+      --color-primary-50: 157 , 214 , 63 ;
+
       --color-secondary-900: 17, 24, 39;
       --color-secondary-800: 31, 41, 55;
       --color-secondary-700: 55, 65, 81;
@@ -36,6 +37,19 @@
     }
     &.dark-mode {
       --background-app-rgb: 20, 20, 20;
+
+
+     --color-primary-900:161 , 216 , 71;
+      --color-primary-800: 169 , 220 , 87;
+      --color-primary-700: 173 , 222 , 95;
+      --color-primary-600:  181 , 226 , 111;
+      --color-primary-500:   189 , 230 , 128;
+      --color-primary-400: 197 , 234 , 146;
+      --color-primary-300: 207 , 238 , 164;
+      --color-primary-200: 217 , 242 , 182 ;
+      --color-primary-100: 226 , 245 , 200;
+      --color-primary-50: 231 , 247 , 209 ;
+
       --color-secondary-900: 249, 250, 251;
       --color-secondary-800: 243, 244, 246;
       --color-secondary-700: 229, 231, 235;
@@ -79,7 +93,7 @@
   .textField__input {
     @apply w-full py-3 px-4 rounded-xl text-secondary-900 border border-secondary-100 
     bg-secondary-100 hover:border-primary-500 focus:border-primary-500 focus:bg-secondary-0 
-    transition-all duration-300 ease-out focus:shadow-lg focus:shadow-primary-200 dark:focus:shadow-secondary-200;
+    transition-all duration-300 ease-out focus:shadow-md focus:shadow-primary-100 dark:focus:shadow-secondary-200;
   }
   .btn {
     @apply px-3 py-3 rounded-xl transition-all duration-300;
@@ -268,4 +282,54 @@ table td {
 }
 
 
+
+.glowing{
+  --gradient-glow:rgb(193, 215, 178), rgb(241, 244, 239),rgb(174, 202, 158),rgb(196, 233, 172);
+  border: 3px solid transparent;
+  background:conic-gradient(var(--gradient-glow))  ;
+}
+
+.glowing-notborder{
+  --gradient-glow:rgb(196, 233, 172),rgb(174, 202, 158), rgb(241, 244, 239),rgb(193, 215, 178);
+ 
+  background:conic-gradient(var(--gradient-glow))  ;
+}
+.border1{
+  --gradient-glow:rgb(193, 215, 178), rgb(241, 244, 239),rgb(174, 202, 158),rgb(196, 233, 172);
+  border: 3px solid transparent;
+  background:
+  linear-gradient(white , white) padding-box, 
+  conic-gradient(var(--gradient-glow)) border-box ;
+  position: relative;
+  isolation: isolate;
+}
+.bordertop{
+  --gradient-glow:rgb(196, 233, 172),rgb(174, 202, 158), rgb(241, 244, 239),rgb(193, 215, 178);
+  border-top: 5px solid transparent;
+  background:
+  linear-gradient(white , white) padding-box, 
+  conic-gradient(var(--gradient-glow)) border-box ;
+  position: relative;
+  isolation: isolate; 
+}
+.border1:hover{
+  --gradient-glow:rgb(193, 215, 178), rgb(241, 244, 239),rgb(174, 202, 158),rgb(196, 233, 172);
+  border: 3px solid transparent;
+  background:
+  linear-gradient(white , white) padding-box, 
+  conic-gradient(var(--gradient-glow)) border-box ;
+  position: relative;
+  isolation: isolate;
+}
+
+.btn-gray{
+  --gradient-glow:rgb(196, 233, 172),rgb(174, 202, 158), rgb(241, 244, 239),rgb(193, 215, 178);
+ 
+  background:conic-gradient(var(--gradient-glow))  ;
+}
+.btn-gray:hover{
+  --gradient-glow:rgb(204, 208, 201),rgb(141, 143, 141), rgb(241, 244, 239),rgb(137, 144, 133);
+ 
+  background:conic-gradient(var(--gradient-glow))  ;
+}
 

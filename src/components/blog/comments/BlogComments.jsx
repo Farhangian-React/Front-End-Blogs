@@ -25,16 +25,17 @@ function BlogComments({ post: { comments, _id: postId } }) {
   };
 
   return (
-    <div className="mb-10">
+    <div className="my-10">
       <div className="flex flex-col items-center lg:flex-row justify-between gap-y-3 mb-8">
-        <h2 className="text-2xl font-bold text-secondary-800">نظرات</h2>
+        <h2 className="text-2xl font-bold text-primary-800">نظرات</h2>
         <Button
        onClick={() => addNewCommentHandler(null)}
           variant="outline"
-          className="flex items-center py-2"
+          className="border1 flex items-center py-2"
         >
-          < BsQuestion className="w-6 h-6"/>
-          <span>ثبت نظر جدید</span>
+            < BsQuestion className="w-6 h-6 text-primary-800"/> 
+          <span className="text-primary-800">ثبت نظر جدید</span> 
+      
         </Button>
     <Modal
           title={parent ? "پاسخ به نظر" : "نظر جدید"}
