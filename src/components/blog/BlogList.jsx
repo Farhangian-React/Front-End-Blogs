@@ -3,52 +3,73 @@ import Link from "next/link";
 import BlogInteraction from "./BlogInteraction";
 import { FaClock } from "react-icons/fa6";
 import Author from "./Author";
-import CoverImage from "./CoverImage";
+// import CoverImage from "./CoverImage"; // اگر استفاده نمی‌شود، حذف شود
 
 export default async function BlogList({ posts }) { 
-  // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/post/list`);
-  // const {
-  //   data: { posts },
-  // } = await res.json();
-
-  return (
-    <div className="grid grid-cols-12 gap-8">
-      {posts.map((post) => {
-        return (
-          <div
-            key={post._id}
-            className="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-6 xl:col-span-4 border border-secondary-100
-            p-2 rounded-lg
-            "
-          >
-            {/*  blog iamge */}
-            <CoverImage {...post} />
-            {/* blog content */}
-            <div className="bg-secondary-100  p-2 rounded-lg flex flex-col w-full justify-between flex-1">
-              <Link href={`/blogs/${post.slug}`}>
-                <h2 className="mb-4 font-bold text-secondary-700">
-                  {post.title}
+ 
+ // کامپوننت کمکی برای رندر یک کارت مجزا (بدون تغییر در منطق کارت)
+const PostCard = ({ post }) => (
+    <div
+        key={post._id}
+        // این دیو باید طوری استایل بگیرد که در ستون‌ها نشکند (break-inside: avoid)
+        className="mb-8 break-inside-avoid border border-secondary-100 
+                   rounded-lg shadow-xl bg-white" 
+    >
+        {/* blog iamge */}
+        {/* **نکته:** برای ارتفاع طبیعی، از object-cover اجتناب کنید یا از آن به صورت هوشمندانه استفاده کنید */}
+        <Link href={`/blogs/${post.slug}`}>
+            <img
+                // حذف یا تغییر object-cover برای دیدن ارتفاع طبیعی
+                className="object-cover object-center  transition-all ease-out duration-300 rounded-2xl w-full h-auto" 
+                src={post.coverImageUrl}
+                alt={post.title || "blog cover"}
+            />
+        </Link>
+        
+        {/* blog content */}
+        <div className="p-4 rounded-b-lg flex flex-col flex-1 min-h-full"> 
+            <Link href={`/blogs/${post.slug}`}>
+                <h2 className="mb-4 font-bold text-secondary-700 line-clamp-2">
+                    {post.title}
                 </h2>
-              </Link>
+            </Link>
 
-              {/* blog category and author */}
-
-              {/* blog author-category */}
-              <div className="flex items-center  justify-between mb-4">
+            {/* blog category and author */}
+            <div className="flex items-center justify-between mt-auto">
                 <Author {...post.author} />
-                <div className="flex items-center text-[10px] text-secondary-500">
-                  <FaClock className="w-4 h-4 stroke-secondary-500 ml-1" />
-                  <span className="ml-1"> خواندن:</span>
-                  <span className="ml-1 leading-3">{post.readingTime}</span>
-                  <span>دقیقه</span>
+                <div className="flex items-center text-xs text-secondary-500">
+                    <FaClock className="w-4 h-4 stroke-secondary-500 ml-1" />
+                    <span className="ml-1"> خواندن:</span>
+                    <span className="ml-1 leading-3">{post.readingTime}</span>
+                    <span>دقیقه</span>
                 </div>
-              </div>
-              {/* blog interactioin */}
-              <BlogInteraction post={post} />
             </div>
-          </div>
-        );
-      })}
+            {/* blog interactioin */}
+            <BlogInteraction post={post} />
+        </div>
     </div>
-  );
+);
+
+
+// 3. ساختار نهایی با استفاده از column-count برای Masonry
+return (
+    // کلاس‌های Masonry: column-count-3 برای 3 ستون
+    // و gap-x-6 برای فاصله بین ستون‌ها.
+    // **نکته مهم:** این کلاس‌ها باید در tailwind.config.js تعریف شده باشند یا از استایل‌های اینلاین استفاده شود.
+   
+   <div className="columns-1 md:columns-2 lg:columns-3 w-[93%]  mx-auto"> 
+        
+            
+      {/* رندر کردن مستقیم همه پست‌ها */}
+    {posts.map((post) => {
+    return ( // حتماً از return استفاده کنید
+        <div key={post._id}> {/* یا <> و </> */}
+     
+            <PostCard key={post._id} post={post} />
+        </div>
+    );
+})}
+      
+    </div>
+);
 }

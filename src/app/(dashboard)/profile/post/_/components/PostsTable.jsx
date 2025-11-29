@@ -19,11 +19,7 @@ async function PostsTable({ query }) {
         <th>نوع</th>
         <th>عملیات</th>
       </Table.Header>
-      <Table.Body>
-        {posts.map((post, index) => (
-          <PostRow key={post._id} post={post} index={index} />
-        ))}
-      </Table.Body>
+      <Table.Body><>{posts.map((post, index) => (<PostRow key={post._id} post={post} index={index} />))}</></Table.Body>
     </Table>
   );
 }

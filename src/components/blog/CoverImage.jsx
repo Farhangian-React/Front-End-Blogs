@@ -6,7 +6,7 @@ export default function CoverImage({ slug, coverImageUrl }) {
     <div className="relative w-full overflow-hidden rounded-lg mb-6 h-[200px]">
       <Link href={`/blogs/${slug}`}>
         <Image
-          className="object-cover object-center hover:scale-110 transition-all ease-out duration-300"
+            className="object-cover object-center hover:scale-110 transition-all ease-out duration-300 rounded-lg w-full" 
           fill
           src={coverImageUrl}
           alt="n"

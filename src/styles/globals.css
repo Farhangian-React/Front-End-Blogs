@@ -7,16 +7,29 @@
     &,
     &.light-mode {
       --background-app-rgb: 249, 250, 251;
-      --color-primary-900: 65 , 95 , 18;
-      --color-primary-800: 71 , 104 , 20;
-      --color-primary-700: 77 , 113 , 22;
-      --color-primary-600: 89 , 131 , 26;
-      --color-primary-500:  95 , 139 , 28 ;
-      --color-primary-400:  107 , 155 , 32;
-      --color-primary-300: 119 , 171 , 36;
-      --color-primary-200: 131 , 187 , 40 ;
-      --color-primary-100: 149 , 210 , 47;
-      --color-primary-50: 157 , 214 , 63 ;
+      --color-primary-900: 44 , 64 , 34;
+      --color-primary-800: 54 , 78 , 41;
+      --color-primary-700: 64 , 92 , 48;
+      --color-primary-600: 79 , 113 , 59;
+      --color-primary-500:  89 , 127 , 66 ;
+      --color-primary-400:  99 , 141 , 72;
+      --color-primary-300: 109 , 155 , 78;
+      --color-primary-200: 114 , 162 , 81 ;
+      --color-primary-100: 119 , 169 , 84;
+      --color-primary-50: 124 , 173 , 90 ;
+
+
+      --color-bezh-900: 149 , 111 , 70;
+      --color-bezh-800: 163 , 121 , 76;
+      --color-bezh-700: 175 , 131 , 84;
+      --color-bezh-600: 181 , 141 , 98;
+      --color-bezh-500:  187 , 151 , 112 ;
+      --color-bezh-400:  193 , 161 , 126;
+      --color-bezh-300: 199 , 171 , 140;
+      --color-bezh-200: 205 , 181 , 154 ;
+      --color-bezh-100: 211 , 191 , 168;
+      --color-bezh-50: 214 , 196 , 175 ;
+
 
       --color-secondary-900: 17, 24, 39;
       --color-secondary-800: 31, 41, 55;
@@ -39,16 +52,28 @@
       --background-app-rgb: 20, 20, 20;
 
 
-     --color-primary-900:161 , 216 , 71;
-      --color-primary-800: 169 , 220 , 87;
-      --color-primary-700: 173 , 222 , 95;
-      --color-primary-600:  181 , 226 , 111;
-      --color-primary-500:   189 , 230 , 128;
-      --color-primary-400: 197 , 234 , 146;
-      --color-primary-300: 207 , 238 , 164;
-      --color-primary-200: 217 , 242 , 182 ;
-      --color-primary-100: 226 , 245 , 200;
-      --color-primary-50: 231 , 247 , 209 ;
+     --color-primary-900:129 , 176 , 97;
+      --color-primary-800: 139 , 182 , 111;
+      --color-primary-700: 144 , 185 , 118;
+      --color-primary-600:  154 , 191 , 132;
+      --color-primary-500:   165 , 198 , 146;
+      --color-primary-400: 177 , 205 , 160;
+      --color-primary-300: 188 , 213 , 174;
+      --color-primary-200: 200 , 220 , 188 ;
+      --color-primary-100: 211 , 227 , 202;
+      --color-primary-50: 228 , 238 , 223 ;
+
+
+
+    
+      
+      --color-bezh-600:  224 , 211 , 196;
+      --color-bezh-500:   231 , 221 , 210;
+      --color-bezh-400: 235 , 226 , 217;
+      --color-bezh-300: 242 , 236 , 231;
+      --color-bezh-200: 246 , 241 , 238;
+      --color-bezh-100: 250 , 246 , 245 ;
+
 
       --color-secondary-900: 249, 250, 251;
       --color-secondary-800: 243, 244, 246;
@@ -90,11 +115,13 @@
   .form {
     @apply flex flex-col gap-y-8 bg-secondary-0 p-4 rounded-xl w-full max-w-lg;
   }
-  .textField__input {
-    @apply w-full py-3 px-4 rounded-xl text-secondary-900 border border-secondary-100 
-    bg-secondary-100 hover:border-primary-500 focus:border-primary-500 focus:bg-secondary-0 
+.textField__input {
+    @apply w-full py-1.5 px-3 rounded-xl text-secondary-900 border border-secondary-100 bg-white 
+    hover:border-primary-500 focus:border-primary-500 
+    /* اضافه کردن تغییر رنگ پس‌زمینه در حالت فوکوس */
+    focus:bg-white 
     transition-all duration-300 ease-out focus:shadow-md focus:shadow-primary-100 dark:focus:shadow-secondary-200;
-  }
+}
   .btn {
     @apply px-3 py-3 rounded-xl transition-all duration-300;
   }
@@ -162,6 +189,7 @@
   margin: 0;
 }
 
+
 html,
 body {
   padding: 0;
@@ -171,6 +199,226 @@ body {
   user-select: none;
   background-color: rgb(var(--background-app-rgb));
 }
+
+
+.container1{
+    position: relative;
+    width: 750px;
+    height: 480px;
+    border: 2px solid #f2ece7;
+    box-shadow: 0 0 25px #d9c9b6;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.container1 .form-box{
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-box.Login{
+    left: 0;
+ 
+    padding-top: 25px;
+    padding-bottom: 0;
+    padding-left: 10px;
+    padding-right: 50px;
+}
+
+.form-box.Login .animation{
+    transform: translateX(0%);
+    transition: .7s;
+    opacity: 1;
+    transition-delay: calc(.1s * var(--S));
+}
+
+.container1.active .form-box.Login .animation{
+    transform: translateX(-120%);
+    opacity: 0;
+    transition-delay: calc(.1s * var(--D));
+}
+
+.form-box.Register{
+    /* display: none; */
+    right: 0;
+
+      padding-top: 25px;
+    padding-bottom: 0;
+    padding-right: 15px;
+    padding-left: 50px;
+}
+
+.form-box.Register .animation{
+    transform: translateX(120%);
+    transition: .7s ease;
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.1s * var(--S));
+}
+
+.container1.active .form-box.Register .animation{
+    transform: translateX(0%);
+    opacity: 1;
+    filter: blur(0px);
+    transition-delay: calc(.1s * var(--li));
+}
+
+.form-box h2{
+    font-size: 28px;
+    text-align: center;
+    font-weight: 500;
+    color: #384033;
+}
+
+
+
+.btnl{
+    position: relative;
+   
+    background: transparent;
+
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #384033;
+    border: 2px solid #81b061;
+    overflow: hidden;
+    z-index: 1;    
+}
+
+.btnl::before{
+    content: "";
+    position: absolute;
+    height: 300%;
+    width: 100%;
+    background: linear-gradient(#ebe2d9, #81b061, #ebe2d9, #81b061);
+    top: -100%;
+    left: 0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn1:hover:before{
+    top: 0;
+}
+
+.regi-link{
+    font-size: 14px;
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+.regi-link a{
+    text-decoration: none;
+    color: #81b061;
+    font-weight: 600;
+}
+
+.regi-link a:hover{
+    text-decoration: underline;
+}
+
+.info-content{
+    position: absolute;
+    top: 30%;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.info-content.Login{
+    right: 0;
+    text-align: right;
+    padding: 0 40px 60px 150px;
+}
+
+.info-content.Login .animation{
+    transform: translateX(0);
+    transition: .7s ease;
+    transition-delay: calc(.1s * var(--S));
+    opacity: 1;
+    filter: blur(0px);
+}
+
+.container1.active .info-content.Login .animation{
+    transform: translateX(120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.1s * var(--D));
+}
+
+.info-content.Register{
+    /* display: none; */
+    left: 0;
+    text-align: left;
+    padding: 0 150px 60px 38px;
+    pointer-events: none;
+}
+
+.info-content.Register .animation{
+    transform: translateX(-120%);
+    transition: .7s ease;
+    opacity: 0;
+    filter: blur(10PX);
+    transition-delay: calc(.1s * var(--S));
+}
+
+.container1.active .info-content.Register .animation{
+    transform: translateX(0%);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(.1s * var(--li));
+}
+
+
+
+
+
+.container1 .curved-shape{
+    position: absolute;
+    right: 0;
+    top: -5px;
+    height: 550px;
+    width: 850px;
+    background: linear-gradient(45deg, #ebe2d9, #81b061);
+    /*transform: rotate(10deg) skewY(40deg);*/
+    transform: rotate(10deg) skewY(40deg);
+    transform-origin: bottom right;
+    transition: 1.5s ease;
+    transition-delay: 1.6s;
+}
+
+.container1.active .curved-shape{
+    transform: rotate(0deg) skewY(0deg);
+    transition-delay: .5s;
+}
+
+.container1 .curved-shape2{
+    position: absolute;
+    left: 250px;
+    top: 100%;
+    height: 700px;
+    width: 850px;
+    background: #ebe2d9;
+    border-top: 3px solid #81b061;
+    transform: rotate(0deg) skewY(0deg);
+    transform-origin: bottom left;
+    transition: 1.5s ease;
+    transition-delay: .5s;
+}
+
+.container1.active .curved-shape2{
+    transform: rotate(-11deg) skewY(-41deg);
+    transition-delay: 1.2s;
+}
+
 
 button {
   cursor: pointer;
@@ -284,7 +532,7 @@ table td {
 
 
 .glowing{
-  --gradient-glow:rgb(193, 215, 178), rgb(241, 244, 239),rgb(174, 202, 158),rgb(196, 233, 172);
+  --gradient-glow:rgb(200 , 220 , 188), rgb( 242 , 236 , 231),rgb(188 , 213 , 174),rgb(211, 227, 202);
   border: 3px solid transparent;
   background:conic-gradient(var(--gradient-glow))  ;
 }
@@ -304,7 +552,7 @@ table td {
   isolation: isolate;
 }
 .bordertop{
-  --gradient-glow:rgb(196, 233, 172),rgb(174, 202, 158), rgb(241, 244, 239),rgb(193, 215, 178);
+  --gradient-glow:rgb(211, 227, 202),rgb(188 , 213 , 174), rgb( 242 , 236 , 231),rgb(200 , 220 , 188);
   border-top: 5px solid transparent;
   background:
   linear-gradient(white , white) padding-box, 
@@ -323,13 +571,29 @@ table td {
 }
 
 .btn-gray{
+  --gradient-glow:rgb(211, 227, 202),rgb(188 , 213 , 174), rgb( 242 , 236 , 231),rgb(200 , 220 , 188);
+ 
+  background:conic-gradient(var(--gradient-glow))  ;
+}
+.btn-bezh{
+  --gradient-glow:rgb(246 , 241 , 238),rgb(231, 221, 210), rgb(250, 246, 245),rgb(224, 211, 196);
+ 
+  background:conic-gradient(var(--gradient-glow))  ;
+}
+.btn-bezh:hover{
+   --gradient-glow:rgb(211, 227, 202),rgb(188 , 213 , 174), rgb( 242 , 236 , 231),rgb(200 , 220 , 188);
+ 
+  background:conic-gradient(var(--gradient-glow))  ;
+}
+.boxgray{
   --gradient-glow:rgb(196, 233, 172),rgb(174, 202, 158), rgb(241, 244, 239),rgb(193, 215, 178);
  
   background:conic-gradient(var(--gradient-glow))  ;
 }
 .btn-gray:hover{
-  --gradient-glow:rgb(204, 208, 201),rgb(141, 143, 141), rgb(241, 244, 239),rgb(137, 144, 133);
+  --gradient-glow:rgb(246 , 241 , 238),rgb(231, 221, 210), rgb(250, 246, 245),rgb(224, 211, 196);
  
   background:conic-gradient(var(--gradient-glow))  ;
 }
+
 

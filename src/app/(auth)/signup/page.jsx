@@ -11,6 +11,7 @@ import { useActionState } from 'react';
 import toast from "react-hot-toast";
 import {createUser} from "@/lib/actions1";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const initialState = {
   error: "",
@@ -27,9 +28,11 @@ const schema = yup
 
 function signup1() {
   const [state, formAction] = useActionState(createUser, initialState);
+  const router=useRouter();
     useEffect(() => {
     if (state?.message) {
       toast.success(state.message);
+router.push("/signin");
     }
     if (state?.error) {
       toast.error(state.error);

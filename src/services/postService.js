@@ -9,7 +9,7 @@ export async function getPostBySlug(slug){
 
 export async function getPosts(queries,options){
   const res=await fetch(
-  `${process.env.NEXT_PUBLIC_API_URL}/post/list?${queries}`,options);
+  `${process.env.NEXT_PUBLIC_API_URL}/post/list?${queries}`,options); // queries الان شامل page=X است
   const {data} =await res.json();
   const {posts,totalPages} = data || {};
   return {posts,totalPages} ;

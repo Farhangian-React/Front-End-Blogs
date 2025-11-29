@@ -34,7 +34,7 @@ const sidebarNavs = [
     href: "/profile/categories",
   },
   {
-    id: 4,
+    id: 5,
     title: "کاربران",
     icon: <FaUsers className="w-5 h-5" />,
     href: "/profile/users",

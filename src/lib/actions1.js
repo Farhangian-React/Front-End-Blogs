@@ -15,11 +15,14 @@ password:formData.get("password")
     const {
       data: { message },
     } = await signupApi(rawFormData);
-//    revalidatePath("/blogs");
+   //revalidatePath("/signin");
     return {
       message,
     };
-  } catch (err) {
+    
+  }
+  
+  catch (err) {
     const error = err?.response?.data?.message;
     return {
       error,

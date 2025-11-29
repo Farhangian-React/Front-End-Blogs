@@ -5,8 +5,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <div className="flex items-center justify-center mt-20">
-      <div className="p-2 w-full max-w-md">{children}</div>
+    <div dir="rtl" className="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#ebe2d9] via-[#ced6c8] to-[#ebe2d9]" >
+      {children}
     </div>
   );
 }

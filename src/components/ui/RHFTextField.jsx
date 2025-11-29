@@ -12,24 +12,25 @@ export default function RHFTextField({
   const hasError = !!(errors && errorMessages);
   return (
     <div
-      className={`textField relative ${hasError ? "textField--invalid" : ""}`}
+      className={` textField relative ${hasError ? "textField--invalid" : ""}`}
     >
       <label htmlFor={name} className="mb-2 block text-secondary-700">
         {label}
       </label>
-      <input
+    <input
         autoComplete="off"
         type={type}
         id={name}
         dir={dir}
-        className={`textField__input  ${
+        // تغییر: فقط bg-white را نگه دارید و !important را حذف کنید
+        className={`bg-white  textField__input ${
           dir === "ltr" ? "text-left" : "text-right"
         }`}
         {...register(name, validationSchema)}
         {...rest}
       />
       {errors && errors[name] && (
-        <span className="text-red-600 block text-xs mt-2">
+        <span className="text-primary-500 block text-xs mt-1">
           {errors[name]?.message}
         </span>
       )}

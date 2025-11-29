@@ -9,7 +9,7 @@ import { IoTrashOutline } from "react-icons/io5";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import deletePost from "../actions/deletePost";
-import { useFormState } from "react-dom";
+ import { useActionState } from 'react'; 
 import toast from "react-hot-toast";
 
 export function CreatePost() {
@@ -36,11 +36,11 @@ export function UpdatePost({ id }) {
 }
 
 export function DeletePost({ id: postId, postTitle }) {
-
-  const [state, formAction] = useFormState(deletePost, {
+const [state, formAction] = useActionState(deletePost, {
     error: "",
     message: "",
   });
+
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
 
   useEffect(() => {

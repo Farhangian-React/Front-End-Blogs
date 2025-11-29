@@ -26,6 +26,17 @@ module.exports=  {
           200: withOpacity("--color-primary-200"),
           100: withOpacity("--color-primary-100"),
         },
+          bezh: {
+          900: withOpacity("--color-bezh-900"),
+          800: withOpacity("--color-bezh-800"),
+          700: withOpacity("--color-bezh-700"),
+          600: withOpacity("--color-bezh-600"),
+          500: withOpacity("--color-bezh-500"),
+          400: withOpacity("--color-bezh-400"),
+          300: withOpacity("--color-bezh-300"),
+          200: withOpacity("--color-bezh-200"),
+          100: withOpacity("--color-bezh-100"),
+        },
         secondary: {
           900: withOpacity("--color-secondary-900"),
           800: withOpacity("--color-secondary-800"),
