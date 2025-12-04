@@ -7,6 +7,7 @@ import Fallback from "@/components/ui/Fallback";
 import Search from "@/components/ui/Search";
 import queryString from "query-string";
 import Pagination from "@/components/ui/Pagination";
+import Footer from "@/components/Footer";
 
 async function PostPage({ searchParams }) {
   const query = queryString.stringify(searchParams);
@@ -18,7 +19,7 @@ async function PostPage({ searchParams }) {
     <div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-secondary-700 mb-12 items-center">
         <h1 className="text-secondary-700 font-bold text-xl">لیست پست ها</h1>
-        <Search />
+      
         <CreatePost />
       </div>
 
@@ -29,7 +30,7 @@ async function PostPage({ searchParams }) {
         <Pagination totalPages={totalPages} />
       </div>
       
-
+<Footer/>
     </div>
   );
 }

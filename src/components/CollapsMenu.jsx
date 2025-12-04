@@ -41,7 +41,7 @@ export default function CollapsMenu (){
 onClick={handleDrawerOpen}
 
     >
-      <HiMenuAlt3 className='h-7 w-7 text-secondary-900' />
+      <HiMenuAlt3 className='h-6 w-6 text-[#384033]' />
     </button>
    <Drawer open={open} onClose={handleDrawerClose}
    className='backdrop-blur-lg'

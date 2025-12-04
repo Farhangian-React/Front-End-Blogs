@@ -31,9 +31,14 @@ await new Promise((res)=> setTimeout(res,2000));
               width={32}
               height={32}
               alt="icon"
-              className="block mx-auto"
+           
+                 className="block mx-auto
+          text-4xl text-blue-500
+          transition-transform duration-300 ease-in-out
+          hover:rotate-[60deg]
+        "
             />     
-            <Link href={`/blogs/category/${category.slug}`}>
+            <Link href={`/blogs/category/${category.slug}`} className="hover:text-sky-500 hover:font-bold hover:scale-105">
               {category.title}
             </Link>
           </li>

@@ -1,5 +1,9 @@
 import AuthFormContainer from "@/app/(dashboard)/profile/_/components/AuthFormContainer";
 
+export const metadata = {
+  title: "فرهنگ بلاگ - ورود به سایت",
+  description: "Auth",
+};
 
 function signin() {
   return(

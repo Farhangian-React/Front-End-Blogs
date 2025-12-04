@@ -17,14 +17,19 @@ const PostCard = ({ post }) => (
     >
         {/* blog iamge */}
         {/* **نکته:** برای ارتفاع طبیعی، از object-cover اجتناب کنید یا از آن به صورت هوشمندانه استفاده کنید */}
-        <Link href={`/blogs/${post.slug}`}>
-            <img
-                // حذف یا تغییر object-cover برای دیدن ارتفاع طبیعی
-                className="object-cover object-center  transition-all ease-out duration-300 rounded-2xl w-full h-auto" 
-                src={post.coverImageUrl}
-                alt={post.title || "blog cover"}
-            />
-        </Link>
+ <Link href={`/blogs/${post.slug}`} className="block w-full"> 
+    <Image
+        src={post.coverImageUrl}
+        alt={post.title || "blog cover"}
+        // **نیاز به تعریف width و height برای کارکرد بهینه Next.js Image**
+        width={1000} // مثال: یک عرض بزرگتر از حد انتظار
+        height={1000} // مثال: یک ارتفاع بزرگتر از حد انتظار
+        
+        // این کلاس‌ها کار می‌کنند اگر Next.js Image بتواند آن‌ها را به img نهایی پاس دهد
+        className="object-contain transition-all ease-out duration-300 rounded-2xl w-full h-auto" 
+    />
+</Link>
+
         
         {/* blog content */}
         <div className="p-4 rounded-b-lg flex flex-col flex-1 min-h-full"> 

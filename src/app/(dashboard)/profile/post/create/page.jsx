@@ -1,5 +1,6 @@
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import CreatePostForm from "./_/CreatePostForm";
+import CreatePostFormB from "./_/CreatePostFormB";
 
 function CreatePostPage() {
   return (
@@ -17,7 +18,7 @@ function CreatePostPage() {
       <h1 className="text-secondary-700 font-bold text-2xl mb-6">
         ایجاد پست جدید
       </h1>
-    <CreatePostForm/>
+    <CreatePostFormB/>
     </div>
   );
 }

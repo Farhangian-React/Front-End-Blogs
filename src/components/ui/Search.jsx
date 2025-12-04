@@ -34,16 +34,23 @@ export default function Search() {
         key={searchParams?.get("search")}
         type="text"
         name="search"
-        placeholder="جستجو ..."
+        placeholder="واژه ی مورد نظر ..."
         autoComplete="off"
         defaultValue={searchParams?.get("search") || ""}
-        className="textField__input py-3 text-xs bg-secondary-0"
+        className="w-full  px-3 rounded-xl text-secondary-900 border1 bg-white 
+    focus:bg-white 
+    transition-all duration-300 ease-out focus:shadow-md focus:shadow-primary-100 dark:focus:shadow-secondary-200;
+         py-3 text-xs "
       />
-      <button
+    {/*  <button
         type="submit"
         className="absolute left-0 top-0 ml-3 flex h-full items-center"
       >
         <IoIosSearch className="h-4 text-secondary-400" />
+      </button>
+      */}
+      <button  type="submit" className="w-full btn-gray textField__input my-5">
+جستجو
       </button>
     </form>
   );

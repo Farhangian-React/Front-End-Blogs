@@ -15,6 +15,19 @@ const nextConfig = {
         // از دو ستاره در انتها استفاده می‌کنیم که پوشش گسترده‌تری بدهد
         pathname: '/uploads/**', 
       },
+  
+       {
+        protocol: 'https',
+        hostname: 'trustseal.enamad.ir', // برای Enamad
+        port: '', 
+        pathname: '/logo.aspx**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'logo.samandehi.ir', // برای Samandehi (اضافه شده)
+        port: '', 
+        pathname: '/logo.aspx**', // مسیر مورد استفاده در لینک شما
+      },
     ],
   },
   logging:{

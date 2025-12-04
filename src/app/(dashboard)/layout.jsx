@@ -1,17 +1,13 @@
 import Header from "./profile/_/components/Header";
 import SideBar from "./profile/_/components/SideBar";
 
-export const metadata = {
-  title: "پروفایل",
-  description: "پروفایل",
-};
 
 export default function RootLayout({ children }) {
   return (
     <div className="bg-secondary-0">
       <div className="grid grid-cols-12 h-screen">
-        <aside className="hidden lg:block lg:col-span-3 xl:col-span-2  ">
-          <SideBar />
+        <aside className="hidden  lg:block lg:col-span-3 xl:col-span-2 mt-12  ">
+      <SideBar/>
         </aside>
         <div className="col-span-12 lg:col-span-9 xl:col-span-10 h-screen flex flex-col">
           <Header />

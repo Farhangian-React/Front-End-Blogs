@@ -3,6 +3,9 @@
 import React, { useState } from 'react';
 import Ssignin from './Ssignin';
 import Ssignout from './Ssignout';
+import SinginS from './SinginS';
+import SingoutS from './SingoutS';
+import Link from 'next/link';
 
 export default function AuthFormContainer() {
     // isActive: false برای ورود (Login)، true برای ثبت نام (Register)
@@ -25,6 +28,8 @@ export default function AuthFormContainer() {
     const containerClasses = `container1 ${isActive ? 'active' : ''}`;
     
     return (
+        <>
+        <div className='hidden md:flex'>
         <div className={containerClasses}>
             {/* اشکال منحنی */}
             <div className="curved-shape"></div>
@@ -55,5 +60,26 @@ export default function AuthFormContainer() {
             </div>
 
         </div>
+        </div>
+     
+       
+         <div className="relative flex flex-col  md:hidden justify-center mx-auto w-screen">
+         <div className="flex flex-col justify-center mx-auto w-[80%]" >
+                <p className=" text-center text-3xl  font-bold mb-1" >خوش آمدید!</p>
+                <div className='flex flex-row justify-center '>
+                <p className=" text-center text-sm pt-2">از حضور شما در کنار </p> 
+                    <Link className='mt-1.5 px-1' href="/"><span className='text-[#d3ccc6] text-md '> فرهنگ بلاگ</span></Link>
+                <p className=" text-center text-sm pt-2"> خوشحالیم.</p>
+           </div>
+            </div>
+   <SinginS handleRegisterClick={handleRegisterClick} isActive={isActive}/>
+
+           
+         <SingoutS handleLoginClick={handleLoginClick} isActive={isActive} />
+
+        
+      
+        </div>
+        </>
     );
 }

@@ -2,10 +2,8 @@
 
 import NavLink from "./NavLink";
 import { useAuth } from "@/context/AuthContext";
-import  Image  from "next/image";
 import { GiBookStorm } from "react-icons/gi";
 import Link from "next/link";
-
 import { HiOutlineLogin } from "react-icons/hi";
 import { PiUserLight } from "react-icons/pi";
 import { BiChevronDown } from "react-icons/bi";
@@ -37,6 +35,12 @@ const navLinks = [
 ];
 
 function Header() {
+    const { logout } = useAuth();
+
+  const logoutHandler = async () => {
+    await logout();
+  };
+
   const { user, isLoading } = useAuth();
 
   return (
@@ -127,12 +131,12 @@ function Header() {
       <p className='text-sm  text-secondary-600 hover:text-primary-900 mx-2 '> حساب کاربری </p>  <PiHouseLight className="w-4 h-4 mt-1 text-secondary-600"/> 
 
 </MenuItem></Link>
-            <Link className="hover:border-none focus:outline-none focus:border-none" href="/"> <MenuItem className="flex flex-row-reverse justify-end py-2 ">
+            <Link className="hover:border-none focus:outline-none focus:border-none" href="/profile/post"> <MenuItem className="flex flex-row-reverse justify-end py-2 ">
       <p className='text-sm  text-secondary-600 hover:text-primary-900 mx-2 '>  پست ها   </p>  <PiListPlusThin className="w-4 h-4 mt-1 text-secondary-600"/> 
 
 </MenuItem></Link>
  <Link className=" hover:border-none focus:outline-none focus:border-none" href="/"> <MenuItem className="flex flex-row-reverse justify-end py-2">
-      <p className='text-sm text-secondary-600 hover:text-red-600 mx-2 '>  خروج   </p>  <PiKeyReturnLight className="w-4 h-4 mt-1  text-secondary-600"/> 
+      <p   onClick={logoutHandler} className='text-sm text-secondary-600 hover:text-red-600 mx-2 '>  خروج   </p>  <PiKeyReturnLight className="w-4 h-4 mt-1  text-secondary-600"/> 
 
 </MenuItem></Link>
     

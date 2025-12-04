@@ -12,7 +12,6 @@ function SideBar({onClose}) {
   const { logout } = useAuth();
 
   const logoutHandler = async () => {
-    console.log("خروج");
     await logout();
   };
 
